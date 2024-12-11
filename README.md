@@ -1,10 +1,10 @@
 # Youtube Data Analysis Project
 
-## Brief
+### Brief
 
 A Data Engineering project aiming to manage, streamline and produce reports from the Youtube videos data.
 
-## Project Goals
+### Project Goals
 1. **Data Ingestion:** Building a mechanism to ingest data from different sources.
 
 2. **ETL System:** Transforming the raw unformatted data (Json) into structured and processed data (Apache Parquet).
@@ -15,7 +15,7 @@ A Data Engineering project aiming to manage, streamline and produce reports from
 
 5. **Cloud:** Using AWS, creating a scalable and cost effective system to store, manage and analyse data.
 
-## AWS Services leveraged
+### AWS Services leveraged
 1. **Amazon S3:** S3 is used to create a data lake for facilitating incoming raw data. Data from sources will be stored in the S3 buckets provisioned for the source.
 
 2. **AWS IAM:** Using Identity Access Manager, I am ensuring the least privildge methodology. Any service used is only given the required access to function.
@@ -30,7 +30,7 @@ A Data Engineering project aiming to manage, streamline and produce reports from
 
 7. **AWS CodePipeline:** CodePipeline is being used to integrate the codespace (GitHub) with the AWS environment for managing and ensuring safe working of the system.
 
-## Dataset Used
+### Dataset Used
  - https://www.kaggle.com/datasets/datasnaek/youtube-new
  
    - This Kaggle dataset contains statistics (CSV files) on daily popular YouTube videos over the course of many months.
