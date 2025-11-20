@@ -1,0 +1,10 @@
+{
+    "name": "youtube-analysis-de",
+    "version": "1.0.0",
+    "description": "CDK",
+    "main":"index.js",
+    "dependencies": {
+        "aws-cdk": "^2.1033.0",
+        "cdk": "^2.1033.0" 
+    }
+}
