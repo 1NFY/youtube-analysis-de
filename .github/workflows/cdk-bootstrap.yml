@@ -7,8 +7,8 @@ permissions:
   contents: read
 
 jobs:
-  cdk_bootstrap:
-    runs_on: ubuntu-latest
+  cdk-bootstrap:
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
