@@ -3,7 +3,8 @@ from aws_cdk import (
     Stack,
     aws_iam as iam,
     aws_lambda as _lambda,
-    Duration as _duration
+    Duration as _duration,
+    Environment
 )
 from constructs import Construct
 
@@ -35,4 +36,5 @@ class LambdaStack(Stack):
         timeout = _duration.minutes(1)
     )
     
+
 
