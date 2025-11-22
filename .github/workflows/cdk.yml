@@ -1,0 +1,46 @@
+name: "CDK Deployment"
+on:
+    push:
+        branches: ['main']
+
+permissions:
+    id-token: write
+    contents: read
+
+env:
+    aws-region: ap-northeast-1
+
+jobs:
+    CDKDeployment:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout Repo
+              uses: actions/checkout@v3
+
+            - name: Setup Node
+              uses: actions/setup-node@v3
+              with:
+                node-version: '20'
+            
+            - name: Install NPM Dependencies
+              run: npm ci
+      
+            # # Setup python and pre-requisite libs
+            - name: Set up Python
+              uses: actions/setup-python@v4
+              with:
+                python-version: 3.12
+            
+            - name: Install pip Dependencies
+              run: pip install -r .github/requirements.txt
+            
+            - name: Configure AWS credentials
+              uses: aws-actions/configure-aws-credentials@v1
+              with:
+                aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+                aws-secret-access-key: ${{ secrets.AWS_ACCESS_KEY }}
+                aws-region: ap-northeast-1
+                
+            - name: CDK Deployment
+              run: npm run cdk deploy DEProjStack
+              
