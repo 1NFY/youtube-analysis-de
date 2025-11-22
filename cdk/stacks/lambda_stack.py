@@ -21,10 +21,11 @@ class LambdaStack(Stack):
         super().__init__(scope, construct_id, env = env, **kwargs)
     
     root_dir = os.path.dirname(os.path.abspath('README.md'))
-    lambdarole = iam.Role.from_role_name(id = "LambdaRole", role_name = "lambdarole")
+    lambdarole = iam.Role.from_role_name(self,"LambdaRole", role_name = "lambdarole")
 
     data_clean_lambda = _lambda.Function(
-        id = "DataCleanLambda",
+        self,
+        "DataCleanLambda",
         runtime = _lambda.Runtime.PYTHON_3_12,
         function_name = "data_clean_lambda",
         code = _lambda.Code.from_asset(
@@ -35,6 +36,7 @@ class LambdaStack(Stack):
         timeout = _duration.minutes(1)
     )
     
+
 
 
 
