@@ -27,12 +27,13 @@ project_synth = DefaultStackSynthesizer(
 
 DEProjStack(
     app,
-    'IrisCdkStack_dev',
+    'DEProjStack',
     stack_name='DEProjStack',
     synthesizer=project_synth,
     env=deploy_env
 )
 
 app.synth()
+
 
 
