@@ -22,7 +22,8 @@ class LambdaStack(Stack):
     
         root_dir = os.path.dirname(os.path.abspath('README.md'))
         lambdarole = iam.Role.from_role_name(self,"LambdaRole", role_name = "lambdarole")
-    
+
+        print("Data Clean Lambda Deploy")
         data_clean_lambda = _lambda.Function(
             self,
             "DataCleanLambda",
@@ -36,6 +37,7 @@ class LambdaStack(Stack):
             timeout = _duration.minutes(1)
         )
     
+
 
 
 
