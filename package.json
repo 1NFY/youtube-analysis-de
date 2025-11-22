@@ -8,6 +8,7 @@
         "cdk": "^2.1033.0" 
     },
   "scripts": {
-    "cdk": "cdk"
+    "cdk": "cdk",
+    "cdk:deploy": "cdk deploy"
   }
 }
