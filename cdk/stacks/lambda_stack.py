@@ -5,6 +5,7 @@ from aws_cdk import (
     aws_lambda as _lambda,
     Duration as _duration
 )
+from constructs import Construct
 
 
 class LambdaStack(Stack):
@@ -34,3 +35,4 @@ class LambdaStack(Stack):
         timeout = _duration.minutes(1)
     )
     
+
