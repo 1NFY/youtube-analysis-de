@@ -42,5 +42,8 @@ jobs:
                 aws-region: ap-northeast-1
                 
             - name: CDK Deployment
+              env: 
+                AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
               run: npm run cdk deploy DEProjStack
               
+

@@ -3,9 +3,9 @@ import os
 from aws_cdk import DefaultStackSynthesizer, Environment
 from cdk.stacks.de_stack import DEProjStack
 app = cdk.App()
-env = os.environ.get("ENVIRONMENT","deploy")
+account_id = os.environ.get("AWS_ACCOUNT_ID")
 deploy_env = Environment(
-    account = env.AWS_ACCOUNT_ID,
+    account = account_id,
     region = "ap-northeast-1"
 )
 project_synth = DefaultStackSynthesizer(
@@ -32,3 +32,4 @@ DEProjStack(
     synthesizer=project_synth,
     env=deploy_env
 )
+
