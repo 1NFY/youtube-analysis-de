@@ -4,7 +4,7 @@ from aws_cdk import (
     Stack
 )
 from constructs import Construct
-from cdk.stacks.lambda_stack import LambdaStack
+from cdk.stacks.serverless.lambda_stack import LambdaStack
 
 class DEProjStack(Stack):
     def __init__(
@@ -21,4 +21,5 @@ class DEProjStack(Stack):
         print("Deploying Lambdas")
         lambda_stack = LambdaStack(self, "DELambdaStack", env = env, synthesizer = synthesizer)
         
+
 
