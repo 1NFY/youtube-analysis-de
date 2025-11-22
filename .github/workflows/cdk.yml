@@ -46,7 +46,7 @@ jobs:
               env: 
                 AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
               run: |
-                  npm run cdk deploy DEProjStack
+                  npm run cdk deploy DELambdaStack
               
 
 

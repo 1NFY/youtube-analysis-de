@@ -2,6 +2,7 @@ import aws_cdk as cdk
 import os
 from aws_cdk import DefaultStackSynthesizer, Environment
 from cdk.stacks.de_stack import DEProjStack
+from cdk.stacks.serverless.lambda_stack import LambdaStack
 app = cdk.App()
 account_id = os.environ.get("AWS_ACCOUNT_ID")
 deploy_env = Environment(
@@ -25,10 +26,18 @@ project_synth = DefaultStackSynthesizer(
             lookup_role_arn=f"arn:aws:iam::{account_id}:role/cdk-hnb659fds-lookup-role-{account_id}-ap-northeast-1"
 )
 
-DEProjStack(
+# DEProjStack(
+#     app,
+#     'DEProjStack',
+#     stack_name='DEProjStack',
+#     synthesizer=project_synth,
+#     env=deploy_env
+# )
+
+LambdaStack(
     app,
-    'DEProjStack',
-    stack_name='DEProjStack',
+    'DELambdaStack',
+    stack_name='DELambdaStack',
     synthesizer=project_synth,
     env=deploy_env
 )
