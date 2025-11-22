@@ -1,5 +1,5 @@
 from aws_cdk import (
-    Environmnet, 
+    Environment, 
     IStackSynthesizer, 
     Stack
 )
@@ -21,3 +21,4 @@ class DEProjStack(Stack):
         print("Deploying Lambdas")
         lambda_stack = LambdaStack(self, "DELambdaStack", env = env, synthesizer = synthesizer)
         
+
