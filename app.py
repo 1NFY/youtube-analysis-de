@@ -33,4 +33,6 @@ DEProjStack(
     env=deploy_env
 )
 
+app.synth()
+
 
